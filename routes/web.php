@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\HeroSection;
+use App\Livewire\Main;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('hero-section', HeroSection::class);
+Route::get('/', Main::class);

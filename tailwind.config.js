@@ -6,7 +6,11 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                poppins: ["Poppins", "sans"], // Tambahkan 'Poppins' ke daftar font sans
+            },
+        },
     },
     plugins: [],
 };

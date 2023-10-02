@@ -1,3 +1,8 @@
 <div>
-    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    <livewire:sections.hero-section />
+    <livewire:sections.about-me />
+    <livewire:sections.skills-and-sertif />
+    <livewire:sections.projects />
+    <livewire:sections.blog />
+    <livewire:sections.contact-me />
 </div>
