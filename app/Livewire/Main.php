@@ -8,6 +8,6 @@ class Main extends Component
 {
     public function render()
     {
-        return view('livewire.main')->title('Ahdirmai Portfolio');
+        return view('livewire.main')->title('ahdirmai Portfolio');
     }
 }

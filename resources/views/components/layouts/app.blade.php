@@ -15,10 +15,10 @@
 </head>
 
 <body class="font-poppins">
-    <livewire:components.navbar />
-    <div class="snap-y snap-mandatory h-screen w-screen overflow-scroll">
-        {{ $slot }}
-    </div>
+
+    {{--
+    <livewire:components.navbar /> --}}
+    {{ $slot }}
 </body>
 
 @stack('script')

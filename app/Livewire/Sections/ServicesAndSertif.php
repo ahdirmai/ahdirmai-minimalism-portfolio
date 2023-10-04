@@ -4,10 +4,10 @@ namespace App\Livewire\Sections;
 
 use Livewire\Component;
 
-class SkillsAndSertif extends Component
+class ServicesAndSertif extends Component
 {
     public function render()
     {
-        return view('livewire.sections.skills-and-sertif');
+        return view('livewire.sections.services-and-sertif');
     }
 }

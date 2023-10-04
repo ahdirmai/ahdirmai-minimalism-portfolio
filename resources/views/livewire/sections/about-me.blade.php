@@ -1,96 +1,208 @@
-<div class="snap-start w-screen h-screen flex m-[20px] gap-[20px] p-[40px] flex-col" id="about-me">
-    <div class="text-[90px] font-extrabold text-center mt-[50px]">
-        about me.
-    </div>
-    <div class="text-center mx-auto w-2/3">
-        <p class="">
-            My full name is Ridha Fahmi Junaidi, usually called Ridha. I am a final year student at Lambung Mangkurat
-            University (ULM) majoring in Computer Science. I have good adaptability in new environment. I can also well
-            analyze a problem and solve it as long as it's within my limits. I have a high interest in photography,
-            programming and data analysis. However, it is possible for me to learn new things.
-        </p>
-    </div>
-    <div class="flex gap-[30px]">
-        <div class="flex flex-col w-full h-[min-content]">
-            <h2 class="text-[45px] font-extrabold mt-[25px] text-center">education</h2>
-            <div class=" rounded overflow-hidden shadow-lg">
-                <div class="px-6 py-4">
-                    <ol class="relative border-l border-gray-200 dark:border-gray-700">
-                        <li class="mb-10 ml-4">
-                            <div
-                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+<section class="snap-start" id="about-me">
+    <div class="container">
+        <div class=" lg:w-screen lg:h-screen flex m-[15px] pt-10  gap-[20px] lg:p-[40px] flex-col">
+            <div class="text-5xl xl:text-[90px] font-extrabold text-center lg:mt-[20px]">
+                about me.
+            </div>
+            <div class="text-center mx-auto xl:w-2/3">
+                <p class="text-sm xl:text-base">
+                    {{ $aboutMe }}
+                </p>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-6 auto-cols-min">
+                <div>
+                    <h2
+                        class="text-3xl xl:text-[45px] font-extrabold lg:mt-[10px] xl:mb-[20px] xl:mt-[25px] text-center">
+                        education
+                    </h2>
+                    <ol class="border-l border-neutral-300 dark:border-neutral-500">
+                        <!--First item-->
+                        @foreach ($educations as $education)
+
+                        <li>
+                            <div class="flex-start flex items-center pt-3">
+                                <div
+                                    class="ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    {{ $education['year'] }}
+                                </p>
                             </div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2018 -
-                                Present</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Lambung Mangkurat University
-                            </h3>
-                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Faculty of
-                                Mathematics and Natural Sciences</p>
-                        </li>
-                        <li class="mb-10 ml-4">
-                            <div
-                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">{{ $education['eduTitle'] }}</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    {{ $education['eduDesc'] }}
+                                </p>
                             </div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2015 -
-                                2018</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">MAN 2 Model Banjarmasin
-                            </h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Mathematics and Natural
-                                Sciences</p>
                         </li>
+                        @endforeach
+                    </ol>
+                </div>
+                <div>
+                    <h2
+                        class="text-3xl xl:text-[45px] font-extrabold lg:mt-[10px] xl:mt-[25px] xl:mb-[20px] text-center">
+                        work
+                        experience</h2>
+                    <ol class="border-l border-neutral-300 dark:border-neutral-500">
+                        <!--First item-->
+                        @foreach ($experiences as $experience)
+                        <li>
+                            <div class="flex-start flex items-center pt-3">
+                                <div
+                                    class="ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    {{ $experience['year'] }}
+                                </p>
+                            </div>
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">{{ $experience['eduTitle'] }}</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    {{ $experience['eduDesc'] }}
+                                </p>
+                            </div>
+                        </li>
+                        @endforeach
                     </ol>
                 </div>
             </div>
 
-        </div>
-        <div class="flex flex-col  w-full h-[min-content]">
-            <div class="text-[45px] font-extrabold mt-[25px] text-center">work experience</div>
-            <div class="max-w-[1/2] rounded overflow-hidden shadow-lg">
-                <div class="px-6 py-4">
-                    <ol class="relative border-l border-gray-200 dark:border-gray-700">
-                        <li class="mb-10 ml-4">
-                            <div
-                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+            {{--
+            <div class="flex gap-[30px]">
+                <div class="flex flex-col w-full h-[min-content]">
+                    <h2 class="text-[45px] font-extrabold mt-[25px] text-center">education</h2>
+                    <ol class="border-l border-neutral-300 dark:border-neutral-500">
+                        <!--First item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-3">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    01.07.2021
+                                </p>
                             </div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">January
-                                2023 - present</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Web Developer at Digitaliz
-                            </h3>
-                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Handling the
-                                development of the Hulu Talent website from PT.CDI .</p>
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 1</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                    scelerisque diam non nisi semper, et elementum lorem ornare.
+                                    Maecenas placerat facilisis mollis. Duis sagittis ligula in
+                                    sodales vehicula.
+                                </p>
+                            </div>
+                        </li>
 
-                        </li>
-                        <li class="mb-10 ml-4">
-                            <div
-                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                        <!--Second item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-2">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    13.09.2021
+                                </p>
                             </div>
-                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Agust
-                                2022 - December
-                                2022</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Intern at Digitaliz YHC
-                                As Web Developer
-                            </h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Using Laravel, Tailwind,
-                                Bootstrap, and livewire to create web applications.
-                            </p>
-                        </li>
-                        <li class="ml-4">
-                            <div
-                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 2</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Libero expedita explicabo eius fugiat quia aspernatur autem
+                                    laudantium error architecto recusandae natus sapiente sit nam
+                                    eaque, consectetur porro molestiae ipsam an deleniti.
+                                </p>
                             </div>
-                            <time
-                                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">xxx</time>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Intern at DISPORABUDPAR Kota
-                                Banjarbaru
-                            </h3>
-                            <p class="text-base font-normal text-gray-500 dark:text-gray-400"> Create a Geographic
-                                Information System for Tourist Destinations in the
-                                city of Banjarbaru</p>
+                        </li>
+
+                        <!--Third item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-2">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    25.11.2021
+                                </p>
+                            </div>
+                            <div class="ml-4 mt-2 pb-5">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 3</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Voluptatibus temporibus esse illum eum aspernatur, fugiat suscipit
+                                    natus! Eum corporis illum nihil officiis tempore. Excepturi illo
+                                    natus libero sit doloremque, laborum molestias rerum pariatur quam
+                                    ipsam necessitatibus incidunt, explicabo.
+                                </p>
+                            </div>
                         </li>
                     </ol>
                 </div>
-            </div>
+                <div class="flex flex-col  w-full h-[min-content]">
+                    <div class="text-[45px] font-extrabold mt-[25px] text-center">work experience</div>
+                    <ol class="border-l border-neutral-300 dark:border-neutral-500">
+                        <!--First item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-3">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    01.07.2021
+                                </p>
+                            </div>
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 1</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                    scelerisque diam non nisi semper, et elementum lorem ornare.
+                                    Maecenas placerat facilisis mollis. Duis sagittis ligula in
+                                    sodales vehicula.
+                                </p>
+                            </div>
+                        </li>
 
+                        <!--Second item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-2">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    13.09.2021
+                                </p>
+                            </div>
+                            <div class="mb-6 ml-4 mt-2">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 2</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Libero expedita explicabo eius fugiat quia aspernatur autem
+                                    laudantium error architecto recusandae natus sapiente sit nam
+                                    eaque, consectetur porro molestiae ipsam an deleniti.
+                                </p>
+                            </div>
+                        </li>
+
+                        <!--Third item-->
+                        <li>
+                            <div class="flex-start flex items-center pt-2">
+                                <div
+                                    class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500">
+                                </div>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-300">
+                                    25.11.2021
+                                </p>
+                            </div>
+                            <div class="ml-4 mt-2 pb-5">
+                                <h4 class="mb-1.5 text-xl font-semibold">Title of section 3</h4>
+                                <p class="mb-3 text-neutral-500 dark:text-neutral-300">
+                                    Voluptatibus temporibus esse illum eum aspernatur, fugiat suscipit
+                                    natus! Eum corporis illum nihil officiis tempore. Excepturi illo
+                                    natus libero sit doloremque, laborum molestias rerum pariatur quam
+                                    ipsam necessitatibus incidunt, explicabo.
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+
+                </div>
+            </div> --}}
         </div>
     </div>
-</div>
+</section>
